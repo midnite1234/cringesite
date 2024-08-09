@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ip</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+        <div id="ip-container">
+            <h1>Your IP Address is:</h1>
+            <div id="ip-address">Loading...</div>
+        </div>
+    
+        <script>
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ip-address').textContent = data.ip;
+                })
+                .catch(error => {
+                    document.getElementById('ip-address').textContent = 'Unable to fetch IP address';
+                    console.error('Error fetching IP address:', error);
+                });
+        </script>
+
+        <a href="https://github.com/midnite1234" class="header__link">Мой GitHub</a>
+    </header>
+
+    <section class="site-list">
+        <div class="container">
+        <div class="site-list__card">
+            <img src="css.png" class="food-list__img">
+            <div class="site-list__text-wrapper">
+            <h4 class="site-list__title">CSS</h4>
+            <p class="site-list__desc">Стиль сайта
+            </div>
+     </div>
+        <div class="site-list__card">
+            <img src="pizda.jpg" class="food-list__img">
+            <div class="site-list__text-wrapper">
+            <h4 class="site-list__title"></h4>
+            <p class="site-list__desc">Пизда</p>
+        </div>
+     </div>
+
+        <div class="site-list__card">
+            <img src="js.jpeg" class="food-list__img">
+            <div class="site-list__text-wrapper">
+            <h4 class="site-list__title">JavaScript</h4>
+            <p class="site-list__desc">Функционал сайта</p>
+        </div>
+    </div>
+
+        <div class="site-list__card">
+            <img src="html.jpg" class="food-list__img">
+            <div class="site-list__text-wrapper">
+            <h4 class="site-list__title">HTML</h4>
+            <p class="site-list__desc">Гипер текстовый язык разметки, основа любого сайта</p>
+        </div>
+     </div>
+        </div>
+    </section>
+</body>
+</html>
